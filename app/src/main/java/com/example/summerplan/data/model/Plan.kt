@@ -1,4 +1,4 @@
-package com.example.summerplan.data
+package com.example.summerplan.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
