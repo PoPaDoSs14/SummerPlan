@@ -1,11 +1,18 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("androidx.room")
+    id("com.google.devtools.ksp")
+    id("kotlin-kapt")
 }
 
 android {
     namespace = "com.example.summerplan"
-    compileSdk = 34
+    compileSdk = 35
+
+    room {
+        schemaDirectory("$projectDir/schemas")
+    }
 
     defaultConfig {
         applicationId = "com.example.summerplan"
@@ -50,6 +57,27 @@ android {
 }
 
 dependencies {
+
+    val room_version = "2.7.1"
+
+
+    val dagger_version = "2.44"
+    ksp ("com.google.dagger:dagger-compiler:2.44")
+    implementation ("com.google.dagger:hilt-android:2.44")
+    implementation ("com.google.dagger:dagger:$dagger_version")
+    implementation ("com.google.dagger:dagger-android:$dagger_version")
+
+    implementation("androidx.room:room-runtime:$room_version")
+    ksp("androidx.room:room-compiler:2.5.0")
+
+    implementation ("com.google.code.gson:gson:2.11.0")
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$room_version")
+
+
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
