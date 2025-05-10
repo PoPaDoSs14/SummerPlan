@@ -25,6 +25,10 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        ksp {
+            arg("room.schemaLocation", "$projectDir/schemas")
+        }
     }
 
     buildTypes {
@@ -58,7 +62,7 @@ android {
 
 dependencies {
 
-    val room_version = "2.7.1"
+    val room_version = "2.6.1"
 
 
     val dagger_version = "2.44"
