@@ -1,4 +1,4 @@
-package com.example.summerplan
+package com.example.summerplan.data.repository
 
 import com.example.summerplan.data.database.TaskDao
 import com.example.summerplan.data.model.Task
