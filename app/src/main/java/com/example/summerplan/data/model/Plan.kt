@@ -9,6 +9,6 @@ data class Plan(
     val id: Long = 0,
     val name: String,
     val description: String,
-    val startDate: Long, // Дата начала плана в миллисекундах
-    val endDate: Long // Дата окончания плана в миллисекундах
+    val startDate: Long?, // Дата начала плана в миллисекундах
+    val endDate: Long? // Дата окончания плана в миллисекундах
 )
