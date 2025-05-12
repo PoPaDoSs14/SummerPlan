@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "c5ae246e25e773936ffe9da43c64d7ce",
+    "identityHash": "8c800b2bce3c1397ea9400aac89ece70",
     "entities": [
       {
         "tableName": "plans",
@@ -94,7 +94,7 @@
       },
       {
         "tableName": "notes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `content` TEXT NOT NULL, `createdAt` INTEGER NOT NULL, `taskId` INTEGER)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `content` TEXT NOT NULL, `createdAt` INTEGER, `taskId` INTEGER)",
         "fields": [
           {
             "fieldPath": "id",
@@ -118,7 +118,7 @@
             "fieldPath": "createdAt",
             "columnName": "createdAt",
             "affinity": "INTEGER",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "taskId",
@@ -140,7 +140,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c5ae246e25e773936ffe9da43c64d7ce')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8c800b2bce3c1397ea9400aac89ece70')"
     ]
   }
 }
