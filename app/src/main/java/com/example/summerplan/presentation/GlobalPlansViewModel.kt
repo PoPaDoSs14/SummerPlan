@@ -4,11 +4,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.summerplan.data.model.Plan
 import com.example.summerplan.data.repository.PlanRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class GlobalPlansViewModel @Inject constructor(
     private val planRepository: PlanRepository
 ) : ViewModel() {
