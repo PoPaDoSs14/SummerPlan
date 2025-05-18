@@ -4,6 +4,7 @@ plugins {
     id("androidx.room")
     id("com.google.devtools.ksp")
     id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -65,11 +66,13 @@ dependencies {
     val room_version = "2.6.1"
 
 
-    val dagger_version = "2.44"
+    val dagger_version = "2.56.2"
     ksp ("com.google.dagger:dagger-compiler:2.44")
     implementation ("com.google.dagger:hilt-android:2.44")
     implementation ("com.google.dagger:dagger:$dagger_version")
     implementation ("com.google.dagger:dagger-android:$dagger_version")
+    implementation("com.google.dagger:hilt-android:2.56.2")
+    ksp("com.google.dagger:hilt-android-compiler:2.56.2")
 
     implementation("androidx.room:room-runtime:$room_version")
     ksp("androidx.room:room-compiler:2.5.0")
