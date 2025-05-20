@@ -60,27 +60,27 @@ android {
         }
     }
 }
+val room_version = "2.7.1"
+val dagger_version = "2.44"
 
 dependencies {
-
-    val room_version = "2.6.1"
-
-
-    val dagger_version = "2.44"
-    ksp ("com.google.dagger:dagger-compiler:2.44")
-    implementation ("com.google.dagger:hilt-android:2.44")
-    implementation ("com.google.dagger:dagger:$dagger_version")
-    implementation ("com.google.dagger:dagger-android:$dagger_version")
+    // Dagger и Hilt
+    implementation("com.google.dagger:dagger:$dagger_version")
+    implementation("com.google.dagger:dagger-android:$dagger_version")
     implementation("com.google.dagger:hilt-android:2.44")
-    ksp("com.google.dagger:hilt-android-compiler:2.44")
 
+    // Для компиляции Dagger/Hilt
+    kapt("com.google.dagger:hilt-compiler:2.44")
+    // Или, если используете KSP для Hilt (опционально)
+    // ksp("com.google.dagger:hilt-android-compiler:2.44")
+
+    // Room
     implementation("androidx.room:room-runtime:$room_version")
-    ksp("androidx.room:room-compiler:2.5.0")
-
-    implementation ("com.google.code.gson:gson:2.11.0")
-
-    // optional - Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:$room_version")
+    ksp("androidx.room:room-compiler:$room_version")  // Используйте ksp с той же версией
+
+    // Gson
+    implementation("com.google.code.gson:gson:2.11.0")
 
 
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
