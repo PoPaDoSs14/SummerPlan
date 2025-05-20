@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("androidx.room") version "2.7.1"
+    id("androidx.room") version "2.5.1"
     id("com.google.devtools.ksp")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
@@ -56,17 +56,17 @@ android {
         }
     }
 }
-val room_version = "2.7.1"
+val room_version = "2.5.1"
 val dagger_version = "2.44"
 
 dependencies {
     // Dagger и Hilt
     implementation("com.google.dagger:dagger:$dagger_version")
     implementation("com.google.dagger:dagger-android:$dagger_version")
-    implementation("com.google.dagger:hilt-android:2.44")
+    implementation("com.google.dagger:hilt-android:2.45")
 
     // Для компиляции Dagger/Hilt
-    kapt("com.google.dagger:hilt-compiler:2.44")
+    kapt("com.google.dagger:hilt-compiler:2.45")
     // Или, если используете KSP для Hilt (опционально)
     // ksp("com.google.dagger:hilt-android-compiler:2.44")
 
